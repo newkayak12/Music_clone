@@ -10,10 +10,36 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+   
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let isFirst: Bool = UserDefaults.standard.bool(forKey: "lauchBefore");
+                       
+                       
+        print("isFirst: \(isFirst)")
+        if true{
+            let defaultSet: [SortType] = [
+                SortType(name: "Playlits", image:  "music.note.list"),
+                SortType(name: "Artists", image: "music.mic"),
+                SortType(name: "Albums", image: "square.stack"),
+                SortType(name: "Songs", image: "music.note"),
+                SortType(name: "TV & Movies", image: "music.note.list"),
+                SortType(name: "Music Videos", image: "music.note.tv"),
+                SortType(name: "Genres", image: "guitars"),
+                SortType(name: "Compiliations", image: "music.quarternote.3"),
+                SortType(name: "Downloaded", image: "music.note.list"),
+                SortType(name: "Home Sharing", image: "music.note.house"),
+            ];
+            let encoder = JSONEncoder()
+            
+            if let encodedList = try? encoder.encode(defaultSet){
+                dump(encodedList)
+                UserDefaults.standard.set(encodedList, forKey: "librarySection")
+            }
+          
+            
+        }
         return true
     }
 
