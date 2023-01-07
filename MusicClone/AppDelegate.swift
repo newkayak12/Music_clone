@@ -20,16 +20,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("isFirst: \(isFirst)")
         if true{
             let defaultSet: [SortType] = [
-                SortType(name: "Playlits", image:  "music.note.list"),
-                SortType(name: "Artists", image: "music.mic"),
-                SortType(name: "Albums", image: "square.stack"),
-                SortType(name: "Songs", image: "music.note"),
-                SortType(name: "TV & Movies", image: "music.note.list"),
-                SortType(name: "Music Videos", image: "music.note.tv"),
-                SortType(name: "Genres", image: "guitars"),
-                SortType(name: "Compiliations", image: "music.quarternote.3"),
-                SortType(name: "Downloaded", image: "music.note.list"),
-                SortType(name: "Home Sharing", image: "music.note.house"),
+                SortType(name: "Playlits", image:  "music.note.list", isShow: true),
+                SortType(name: "Artists", image: "music.mic", isShow: true),
+                SortType(name: "Albums", image: "square.stack", isShow: false),
+                SortType(name: "Songs", image: "music.note", isShow: false),
+                SortType(name: "TV & Movies", image: "music.note.list", isShow: false),
+                SortType(name: "Music Videos", image: "music.note.tv", isShow: false),
+                SortType(name: "Genres", image: "guitars", isShow: true),
+                SortType(name: "Compiliations", image: "music.quarternote.3", isShow: false),
+                SortType(name: "Downloaded", image: "music.note.list", isShow: false),
+                SortType(name: "Home Sharing", image: "music.note.house", isShow: false),
             ];
             let encoder = JSONEncoder()
             

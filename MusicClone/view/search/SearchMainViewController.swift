@@ -1,5 +1,5 @@
 //
-//  LibraryMainTableViewController.swift
+//  SearchMainViewController.swift
 //  MusicClone
 //
 //  Created by Sang Hyeon kim on 2023/01/07.
@@ -7,62 +7,40 @@
 
 import UIKit
 
-class LibraryMainTableViewController: UITableViewController {
-    var isEdit: Bool = false
-    var sortTypeList: [SortType] = []
-    var albumList: [Album] = []
+class SearchMainViewController: UITableViewController {
+    var text: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let preset = UserDefaults.standard.value(forKey: "librarySection") as? Data else {return}
-        let decoder = JSONDecoder()
-        if let decodedData = try? decoder.decode([SortType].self, from: preset) {
-            sortTypeList = decodedData
-//            print(decodedData)
-        }
+        let searchController = UISearchController()
+        searchController.searchBar.placeholder = "Artist, Song, Lyric etc..."
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.showsScopeBar = true
+        self.navigationItem.searchController = searchController
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        var count = 0;
-        if sortTypeList.count > 0  {count += 1;}
-        if albumList.count > 0 {count+=1}
-        return count
+        return 0
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        switch section {
-            case 0:
-                return sortTypeList.filter{$0.isShow!}.count
-            case 1:
-                return albumList.count
-            default: return 0
-        }
+        return 0
     }
 
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        switch indexPath.section {
-            case 0:
-                let sort = self.sortTypeList.filter{$0.isShow!}
-                cell.imageView?.image = UIImage(systemName: sort[indexPath.row].image!)
-                cell.textLabel?.text = sortTypeList[indexPath.row].name
-                cell.accessoryType = .disclosureIndicator
-            default:
-                break
-        }
-            
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
         // Configure the cell...
 
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+    */
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -108,4 +86,12 @@ class LibraryMainTableViewController: UITableViewController {
     }
     */
 
+}
+
+extension SearchMainViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        if let result = searchController.searchBar.text  {
+            text = result;
+        }
+    }
 }

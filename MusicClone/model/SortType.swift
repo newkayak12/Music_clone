@@ -11,5 +11,6 @@ import UIKit
 struct SortType: Codable {
     var name: String?
     var image: String?
+    var isShow: Bool?
 }
 
