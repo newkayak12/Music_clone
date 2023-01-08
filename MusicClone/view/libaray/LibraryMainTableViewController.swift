@@ -20,6 +20,10 @@ class LibraryMainTableViewController: UITableViewController {
             sortTypeList = decodedData
 //            print(decodedData)
         }
+        
+        let miniPlayer = MiniPlayer()
+        
+        
     }
 
     // MARK: - Table view data source
