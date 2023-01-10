@@ -4,41 +4,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Radio-->
-        <scene sceneID="hjk-gT-ncM">
-            <objects>
-                <tableViewController id="RgP-aR-MjC" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cia-cB-hX4">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="YC8-lP-g0a">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YC8-lP-g0a" id="vYZ-uC-Ehj">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="RgP-aR-MjC" id="sJM-n3-enO"/>
-                            <outlet property="delegate" destination="RgP-aR-MjC" id="Xk2-zW-eZP"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Radio" image="dot.radiowaves.left.and.right" catalog="system" selectedImage="dot.radiowaves.left.and.right" id="56G-Dq-hxA"/>
-                    <navigationItem key="navigationItem" title="Radio" id="YaE-br-eUF"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="n6r-tJ-rmp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1570" y="-308"/>
-        </scene>
         <!--RadioMainNavigator-->
         <scene sceneID="1q5-KB-ZQ5">
             <objects>
@@ -48,12 +18,44 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="RgP-aR-MjC" kind="relationship" relationship="rootViewController" id="bVQ-cJ-Jfa"/>
+                        <segue destination="9Z3-jI-YFs" kind="relationship" relationship="rootViewController" id="brA-oy-TXI"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="obJ-EB-D2u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="480" y="-308"/>
+        </scene>
+        <!--Radio-->
+        <scene sceneID="SZq-A0-Mqq">
+            <objects>
+                <viewController id="9Z3-jI-YFs" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yxn-b3-h4n">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYy-SJ-aKf" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="cLk-xV-v9V"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="G1F-kG-8CC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="G1F-kG-8CC" firstAttribute="trailing" secondItem="WYy-SJ-aKf" secondAttribute="trailing" id="YnM-QH-FD8"/>
+                            <constraint firstItem="G1F-kG-8CC" firstAttribute="bottom" secondItem="WYy-SJ-aKf" secondAttribute="bottom" id="jMJ-e0-SdE"/>
+                            <constraint firstItem="WYy-SJ-aKf" firstAttribute="leading" secondItem="G1F-kG-8CC" secondAttribute="leading" id="m8R-Bm-Xec"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Radio" image="dot.radiowaves.left.and.right" catalog="system" id="iDY-uk-AFh"/>
+                    <navigationItem key="navigationItem" title="Radio" id="koF-Df-igW"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RM5-nE-fCm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1265" y="-308"/>
         </scene>
     </scenes>
     <resources>

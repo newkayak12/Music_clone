@@ -4,7 +4,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="cyH-ld-zJL" kind="relationship" relationship="rootViewController" id="ATy-se-r5p"/>
+                        <segue destination="PWG-Fu-V1q" kind="relationship" relationship="rootViewController" id="Bpq-8Z-syH"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mha-BV-XFY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -25,39 +28,72 @@
             <point key="canvasLocation" x="-166" y="620"/>
         </scene>
         <!--Search-->
-        <scene sceneID="Ol1-m4-Ue6">
+        <scene sceneID="coo-wt-BGd">
             <objects>
-                <tableViewController id="cyH-ld-zJL" customClass="SearchMainViewController" customModule="MusicClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="DLn-be-3br">
+                <viewController id="PWG-Fu-V1q" customClass="SearchMainViewController" customModule="MusicClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qRN-g7-mTR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YEq-Up-YF2">
+                                <rect key="frame" x="0.0" y="103" width="393" height="576"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pij-TM-tSQ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="E9x-1W-pgK" customClass="SearchCustomCell" customModule="MusicClone" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RxN-Fp-ude">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="PWG-Fu-V1q" id="ucW-Eh-rc3"/>
+                                    <outlet property="delegate" destination="PWG-Fu-V1q" id="i5s-iG-s0A"/>
+                                </connections>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-hV-Zci" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="Yj1-VM-XBc"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ep1-en-nlk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Akf-KK-Gq9">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Akf-KK-Gq9" id="ht4-2I-Cnp">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cyH-ld-zJL" id="TQy-0l-H8e"/>
-                            <outlet property="delegate" destination="cyH-ld-zJL" id="ltc-5N-TUe"/>
-                        </connections>
-                    </tableView>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="rSB-Pc-3rg"/>
-                    <navigationItem key="navigationItem" title="Search" id="zgq-aD-w6Z"/>
+                        <constraints>
+                            <constraint firstItem="bhd-hV-Zci" firstAttribute="leading" secondItem="Ep1-en-nlk" secondAttribute="leading" id="5Li-n1-N8N"/>
+                            <constraint firstItem="Ep1-en-nlk" firstAttribute="bottom" secondItem="bhd-hV-Zci" secondAttribute="bottom" id="8kw-NQ-4wu"/>
+                            <constraint firstItem="YEq-Up-YF2" firstAttribute="leading" secondItem="Ep1-en-nlk" secondAttribute="leading" id="Dld-1V-aA2"/>
+                            <constraint firstItem="YEq-Up-YF2" firstAttribute="top" secondItem="Ep1-en-nlk" secondAttribute="top" id="WHU-5n-Szp"/>
+                            <constraint firstItem="bhd-hV-Zci" firstAttribute="top" secondItem="YEq-Up-YF2" secondAttribute="bottom" id="fsA-j3-mL3"/>
+                            <constraint firstItem="Ep1-en-nlk" firstAttribute="trailing" secondItem="YEq-Up-YF2" secondAttribute="trailing" id="khP-OH-OgX"/>
+                            <constraint firstItem="Ep1-en-nlk" firstAttribute="trailing" secondItem="bhd-hV-Zci" secondAttribute="trailing" id="sQJ-ol-25a"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="hea-sT-R1y"/>
+                    <navigationItem key="navigationItem" title="Search" id="9YS-Rg-81T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ufB-eI-KVL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9c3-Vw-Oqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="620"/>
+            <point key="canvasLocation" x="649.61832061068696" y="624.64788732394368"/>
         </scene>
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.17599999904632568" blue="0.33299997448921204" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -27,55 +28,83 @@
                         </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="xUG-us-bYE" kind="relationship" relationship="rootViewController" id="31P-Ox-JJc"/>
+                        <segue destination="pgi-GY-FB1" kind="relationship" relationship="rootViewController" id="kNo-gL-fvi"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k0n-5M-R1O" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1885" y="-140"/>
         </scene>
-        <!--Library-->
-        <scene sceneID="v1M-pY-TAd">
+        <!--Libarary-->
+        <scene sceneID="GHU-2i-DCz">
             <objects>
-                <tableViewController id="xUG-us-bYE" customClass="LibraryMainTableViewController" customModule="MusicClone" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="cXY-ne-6jL">
+                <viewController id="pgi-GY-FB1" customClass="LibraryMainTableViewController" customModule="MusicClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cTj-EH-FTf">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="MgU-u0-M5c" style="IBUITableViewCellStyleDefault" id="5XA-1d-bhC">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5XA-1d-bhC" id="nbG-LN-paM">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MgU-u0-M5c">
-                                            <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-Eo-XqZ">
+                                <rect key="frame" x="0.0" y="103" width="393" height="576"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sort" textLabel="aik-BT-smw" style="IBUITableViewCellStyleDefault" id="f11-j6-irJ">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="f11-j6-irJ" id="uca-gB-OMf">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="xUG-us-bYE" id="Qwo-nR-0S9"/>
-                            <outlet property="delegate" destination="xUG-us-bYE" id="vNi-4l-iE0"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Library" id="EXl-3S-p4Y">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="JBR-3y-qKh">
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aik-BT-smw">
+                                                    <rect key="frame" x="20" y="0.0" width="353" height="43.666667938232422"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="pgi-GY-FB1" id="0P3-JV-xpF"/>
+                                    <outlet property="delegate" destination="pgi-GY-FB1" id="Bzk-k8-IBv"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XA-yE-Tn0" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="90" id="CQR-We-yyj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="e4N-2L-BMf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="top" secondItem="Qww-Eo-XqZ" secondAttribute="bottom" id="G2g-cj-ZNd"/>
+                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="top" secondItem="Qww-Eo-XqZ" secondAttribute="bottom" id="Vku-6n-gjr"/>
+                            <constraint firstItem="e4N-2L-BMf" firstAttribute="trailing" secondItem="Qww-Eo-XqZ" secondAttribute="trailing" id="Vq7-eX-SOG"/>
+                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="YYB-nY-09W"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="top" secondItem="e4N-2L-BMf" secondAttribute="top" id="ahn-G9-s64"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="cpZ-lT-sls"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="top" secondItem="e4N-2L-BMf" secondAttribute="top" id="hO3-mu-kp5"/>
+                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="trailing" secondItem="e4N-2L-BMf" secondAttribute="trailing" id="hbD-3l-vVC"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="trailing" secondItem="e4N-2L-BMf" secondAttribute="trailing" id="lsU-19-Nzx"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="o5l-kg-T1M"/>
+                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="bottom" secondItem="e4N-2L-BMf" secondAttribute="bottom" id="s4s-Q5-PBc"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Libaray" image="play.square.stack" catalog="system" id="d2U-uy-mqb"/>
+                    <navigationItem key="navigationItem" title="Libarary" id="qd4-Dn-Zl5">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="36W-qz-FV0">
                             <color key="tintColor" name="AccentColor"/>
                         </barButtonItem>
                     </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cHA-QB-BIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0KH-0h-yiV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1086.2595419847328" y="-140.14084507042253"/>
+            <point key="canvasLocation" x="-954.96183206106866" y="-171.12676056338029"/>
         </scene>
     </scenes>
     <resources>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchMainViewController: UITableViewController {
+class SearchMainViewController: UIViewController {
     var text: String?
     
     override func viewDidLoad() {
@@ -17,74 +17,10 @@ class SearchMainViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.showsScopeBar = true
         self.navigationItem.searchController = searchController
+        self.navigationItem.hidesSearchBarWhenScrolling = false
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }
 
@@ -94,4 +30,53 @@ extension SearchMainViewController: UISearchResultsUpdating {
             text = result;
         }
     }
+}
+
+extension SearchMainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.layer.cornerRadius = 10
+//        let image = UIImage(named: "defaultAlbumArt")
+//        let imageContainer = UIImageView(image: image)
+//        imageContainer.sizeToFit()
+        
+//        cell.contentView.addSubview(imageContainer)
+//        imageContainer.translatesAutoresizingMaskIntoConstraints = false
+//        imageContainer.trailingAnchor.constraint(equalTo: cell.trailingAnchor).isActive = true
+//        imageContainer.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
+//        imageContainer.topAnchor.constraint(equalTo: cell.topAnchor).isActive = true
+//        imageContainer.bottomAnchor.constraint(equalTo: cell.bottomAnchor).isActive = true
+        let label = UILabel(frame: .zero)
+        cell.contentView.addSubview(label)
+        label.text = "TEST"
+        label.font = .preferredFont(forTextStyle: .title3)
+        label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.leadingAnchor.constraint(equalTo: cell.leadingAnchor, constant: 20).isActive = true
+        label.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 20).isActive = true
+//        loadViewIfNeeded()
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { fatalError() }
+        let bound = view.bounds
+        let width = bound.width - ( layout.sectionInset.left + layout.sectionInset.right)
+        let height = bound.height - (layout.sectionInset.top + layout.sectionInset.bottom)
+        
+        
+        let collectionWidth = (width - (layout.minimumLineSpacing) * 3) / 2
+        let collectionHeight = collectionWidth * 0.8
+        
+        return CGSize(width: collectionWidth.rounded(.down), height: collectionHeight.rounded(.down))
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+    }
+    
 }
