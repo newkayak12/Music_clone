@@ -39,22 +39,51 @@
                                 <rect key="frame" x="0.0" y="103" width="393" height="576"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pij-TM-tSQ">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="itemSize" width="122" height="128"/>
+                                    <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="E9x-1W-pgK" customClass="SearchCustomCell" customModule="MusicClone" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <rect key="frame" x="0.0" y="50" width="122" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="RxN-Fp-ude">
-                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="122" height="128"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xmV-4n-WfM">
+                                                    <rect key="frame" x="0.0" y="0.0" width="122" height="128"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oH4-9Q-Zj6">
+                                                    <rect key="frame" x="10" y="97" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xmV-4n-WfM" firstAttribute="top" secondItem="RxN-Fp-ude" secondAttribute="top" id="0Pe-lq-wwr"/>
+                                                <constraint firstAttribute="bottom" secondItem="xmV-4n-WfM" secondAttribute="bottom" id="8N6-EU-z99"/>
+                                                <constraint firstAttribute="bottom" secondItem="oH4-9Q-Zj6" secondAttribute="bottom" constant="10" id="W7f-jD-anp"/>
+                                                <constraint firstItem="xmV-4n-WfM" firstAttribute="leading" secondItem="RxN-Fp-ude" secondAttribute="leading" id="WbD-gp-JcH"/>
+                                                <constraint firstItem="oH4-9Q-Zj6" firstAttribute="leading" secondItem="RxN-Fp-ude" secondAttribute="leading" constant="10" id="fqS-7L-V8y"/>
+                                                <constraint firstAttribute="trailing" secondItem="xmV-4n-WfM" secondAttribute="trailing" id="rYK-2T-lAX"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
                                         <color key="backgroundColor" name="AccentColor"/>
+                                        <size key="customSize" width="122" height="128"/>
+                                        <connections>
+                                            <outlet property="cell" destination="RxN-Fp-ude" id="iWO-vl-aX7"/>
+                                            <outlet property="collectionImage" destination="xmV-4n-WfM" id="oo3-mb-Xme"/>
+                                            <outlet property="collectionText" destination="oH4-9Q-Zj6" id="OPx-Ow-qK6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="reusableView" id="5SO-TM-DAX">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionReusableView>
                                 <connections>
                                     <outlet property="dataSource" destination="PWG-Fu-V1q" id="ucW-Eh-rc3"/>
                                     <outlet property="delegate" destination="PWG-Fu-V1q" id="i5s-iG-s0A"/>

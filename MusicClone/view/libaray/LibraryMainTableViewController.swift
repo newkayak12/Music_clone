@@ -20,9 +20,6 @@ class LibraryMainTableViewController: UIViewController {
             sortTypeList = decodedData
 //            print(decodedData)
         }
-        
-        
-        
     }
 }
 
@@ -50,7 +47,8 @@ extension LibraryMainTableViewController: UITableViewDelegate, UITableViewDataSo
         return cell
     }
     
-    // MARK: - Table view data source
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
 }

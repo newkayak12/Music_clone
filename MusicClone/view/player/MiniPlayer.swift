@@ -7,8 +7,11 @@
 
 import UIKit
 
-class MiniPlayer: UIView {
-
+class MiniPlayer: UIView, UIGestureRecognizerDelegate {
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("TOUCH")
+    }
     override init(frame: CGRect) {
         super.init(frame: frame)
         customInit()
@@ -23,5 +26,4 @@ class MiniPlayer: UIView {
             addSubview(view)
         }
     }
-    
 }

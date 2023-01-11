@@ -9,9 +9,11 @@ import UIKit
 
 class SearchCustomCell: UICollectionViewCell {
  
+    @IBOutlet weak var cell: UIView!
     @IBOutlet weak var collectionImage: UIImageView!
     @IBOutlet weak var collectionText: UILabel!
     override class func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 }

@@ -59,6 +59,7 @@
                         </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGray6Color"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="jiA-Xu-6KZ" firstAttribute="centerY" secondItem="hJu-Yz-fMC" secondAttribute="centerY" id="8wD-85-jzm"/>
                         <constraint firstItem="jiA-Xu-6KZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8Wj-rF-sqb" secondAttribute="trailing" constant="20" id="H3P-1N-YLp"/>
@@ -71,6 +72,9 @@
                         <constraint firstItem="ykd-7l-Mdo" firstAttribute="centerY" secondItem="hJu-Yz-fMC" secondAttribute="centerY" id="ugc-f7-aha"/>
                         <constraint firstAttribute="height" constant="90" id="wHJ-hg-Iww"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="b7S-ZA-UwH" appends="YES" id="rHV-0j-VIb"/>
+                    </connections>
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -83,8 +87,13 @@
                 <constraint firstItem="hJu-Yz-fMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="hNU-un-Li3"/>
                 <constraint firstItem="hJu-Yz-fMC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ugD-Mu-iCI"/>
             </constraints>
-            <point key="canvasLocation" x="55.725190839694655" y="-12.67605633802817"/>
+            <point key="canvasLocation" x="-836" y="-179"/>
         </view>
+        <tapGestureRecognizer id="b7S-ZA-UwH">
+            <connections>
+                <outlet property="delegate" destination="-1" id="Eka-za-nQm"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
     <resources>
         <image name="defaultAlbumArt" width="156" height="156"/>
