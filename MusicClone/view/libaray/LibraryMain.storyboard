@@ -44,7 +44,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Qww-Eo-XqZ">
-                                <rect key="frame" x="0.0" y="103" width="393" height="576"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="sort" textLabel="aik-BT-smw" style="IBUITableViewCellStyleDefault" id="f11-j6-irJ">
@@ -70,28 +70,14 @@
                                     <outlet property="delegate" destination="pgi-GY-FB1" id="Bzk-k8-IBv"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9XA-yE-Tn0" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="CQR-We-yyj"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e4N-2L-BMf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="top" secondItem="Qww-Eo-XqZ" secondAttribute="bottom" id="G2g-cj-ZNd"/>
-                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="top" secondItem="Qww-Eo-XqZ" secondAttribute="bottom" id="Vku-6n-gjr"/>
-                            <constraint firstItem="e4N-2L-BMf" firstAttribute="trailing" secondItem="Qww-Eo-XqZ" secondAttribute="trailing" id="Vq7-eX-SOG"/>
-                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="YYB-nY-09W"/>
-                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="top" secondItem="e4N-2L-BMf" secondAttribute="top" id="ahn-G9-s64"/>
-                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="cpZ-lT-sls"/>
-                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="top" secondItem="e4N-2L-BMf" secondAttribute="top" id="hO3-mu-kp5"/>
-                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="trailing" secondItem="e4N-2L-BMf" secondAttribute="trailing" id="hbD-3l-vVC"/>
-                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="trailing" secondItem="e4N-2L-BMf" secondAttribute="trailing" id="lsU-19-Nzx"/>
-                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="o5l-kg-T1M"/>
-                            <constraint firstItem="9XA-yE-Tn0" firstAttribute="bottom" secondItem="e4N-2L-BMf" secondAttribute="bottom" id="s4s-Q5-PBc"/>
+                            <constraint firstItem="e4N-2L-BMf" firstAttribute="bottom" secondItem="Qww-Eo-XqZ" secondAttribute="bottom" id="20A-AL-Uwi"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="leading" secondItem="e4N-2L-BMf" secondAttribute="leading" id="M6c-m4-vte"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="top" secondItem="e4N-2L-BMf" secondAttribute="top" id="agc-W6-Tcz"/>
+                            <constraint firstItem="Qww-Eo-XqZ" firstAttribute="trailing" secondItem="e4N-2L-BMf" secondAttribute="trailing" id="xzk-qo-6p8"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Libaray" image="play.square.stack" catalog="system" id="d2U-uy-mqb"/>

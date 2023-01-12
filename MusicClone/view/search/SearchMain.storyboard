@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="YEq-Up-YF2">
-                                <rect key="frame" x="0.0" y="103" width="393" height="576"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Pij-TM-tSQ">
                                     <size key="itemSize" width="122" height="128"/>
@@ -89,29 +89,22 @@
                                     <outlet property="delegate" destination="PWG-Fu-V1q" id="i5s-iG-s0A"/>
                                 </connections>
                             </collectionView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bhd-hV-Zci" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Yj1-VM-XBc"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ep1-en-nlk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="bhd-hV-Zci" firstAttribute="leading" secondItem="Ep1-en-nlk" secondAttribute="leading" id="5Li-n1-N8N"/>
-                            <constraint firstItem="Ep1-en-nlk" firstAttribute="bottom" secondItem="bhd-hV-Zci" secondAttribute="bottom" id="8kw-NQ-4wu"/>
-                            <constraint firstItem="YEq-Up-YF2" firstAttribute="leading" secondItem="Ep1-en-nlk" secondAttribute="leading" id="Dld-1V-aA2"/>
-                            <constraint firstItem="YEq-Up-YF2" firstAttribute="top" secondItem="Ep1-en-nlk" secondAttribute="top" id="WHU-5n-Szp"/>
-                            <constraint firstItem="bhd-hV-Zci" firstAttribute="top" secondItem="YEq-Up-YF2" secondAttribute="bottom" id="fsA-j3-mL3"/>
-                            <constraint firstItem="Ep1-en-nlk" firstAttribute="trailing" secondItem="YEq-Up-YF2" secondAttribute="trailing" id="khP-OH-OgX"/>
-                            <constraint firstItem="Ep1-en-nlk" firstAttribute="trailing" secondItem="bhd-hV-Zci" secondAttribute="trailing" id="sQJ-ol-25a"/>
+                            <constraint firstItem="YEq-Up-YF2" firstAttribute="top" secondItem="Ep1-en-nlk" secondAttribute="top" id="4lS-Ih-YNc"/>
+                            <constraint firstItem="YEq-Up-YF2" firstAttribute="trailing" secondItem="Ep1-en-nlk" secondAttribute="trailing" id="6iK-er-YsC"/>
+                            <constraint firstAttribute="bottom" secondItem="YEq-Up-YF2" secondAttribute="bottom" id="CUn-fv-e0J"/>
+                            <constraint firstItem="YEq-Up-YF2" firstAttribute="leading" secondItem="Ep1-en-nlk" secondAttribute="leading" id="U4Q-SI-DTN"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="hea-sT-R1y"/>
                     <navigationItem key="navigationItem" title="Search" id="9YS-Rg-81T"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="collectionView" destination="YEq-Up-YF2" id="Xqu-yk-8vU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c3-Vw-Oqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

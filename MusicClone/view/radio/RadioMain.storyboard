@@ -32,22 +32,8 @@
                     <view key="view" contentMode="scaleToFill" id="yxn-b3-h4n">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WYy-SJ-aKf" customClass="MiniPlayer" customModule="MusicClone" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="679" width="393" height="90"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="cLk-xV-v9V"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="G1F-kG-8CC"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="G1F-kG-8CC" firstAttribute="trailing" secondItem="WYy-SJ-aKf" secondAttribute="trailing" id="YnM-QH-FD8"/>
-                            <constraint firstItem="G1F-kG-8CC" firstAttribute="bottom" secondItem="WYy-SJ-aKf" secondAttribute="bottom" id="jMJ-e0-SdE"/>
-                            <constraint firstItem="WYy-SJ-aKf" firstAttribute="leading" secondItem="G1F-kG-8CC" secondAttribute="leading" id="m8R-Bm-Xec"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Radio" image="dot.radiowaves.left.and.right" catalog="system" id="iDY-uk-AFh"/>
                     <navigationItem key="navigationItem" title="Radio" id="koF-Df-igW"/>

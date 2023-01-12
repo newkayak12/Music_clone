@@ -14,11 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let isFirst: Bool = UserDefaults.standard.bool(forKey: "lauchBefore");
+        let lauchBefore: Bool = UserDefaults.standard.bool(forKey: "lauchBefore");
+        UserDefaults.standard.set(true, forKey: "launchBefore")
                        
-                       
-        print("isFirst: \(isFirst)")
-        if true{
+        if !lauchBefore{
             let defaultSet: [SortType] = [
                 SortType(name: "Playlits", image:  "music.note.list", isShow: true),
                 SortType(name: "Artists", image: "music.mic", isShow: true),
@@ -34,7 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let encoder = JSONEncoder()
             
             if let encodedList = try? encoder.encode(defaultSet){
-                dump(encodedList)
                 UserDefaults.standard.set(encodedList, forKey: "librarySection")
             }
           
