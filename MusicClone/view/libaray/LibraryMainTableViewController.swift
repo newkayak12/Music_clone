@@ -25,10 +25,10 @@ class LibraryMainTableViewController: UIViewController {
     }
     
     func loadFiles() {
-        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil)
+        let urls = Bundle.main.urls(forResourcesWithExtension: "mp3", subdirectory: nil) ?? []
 //        let url = Bundle.main.resourceURL
 //        print("\n\n")
-            for url in urls! {
+            for url in urls {
                let file =  AVPlayerItem(url: url)
 //                print(String(describing: file))
                 musicList.append(file)
@@ -70,7 +70,7 @@ extension LibraryMainTableViewController: UITableViewDelegate, UITableViewDataSo
                 cell = tableView.dequeueReusableCell(withIdentifier: "music", for: indexPath)
                 cell.clipsToBounds = false
                 let height = ((Int(((view.bounds.width - 30) / 2).rounded(.down)) * musicList.count ) / 2 )
-                cell.contentView.heightAnchor.constraint(equalToConstant: CGFloat(height + 40).rounded(.up)).isActive = true
+                cell.contentView.heightAnchor.constraint(equalToConstant: CGFloat(height + 60).rounded(.up)).isActive = true
             default:
                 break
         }
@@ -92,6 +92,26 @@ extension LibraryMainTableViewController: UITableViewDelegate, UITableViewDataSo
 
 extension LibraryMainTableViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        var supplimentary = UICollectionReusableView()
+        switch kind {
+            case UICollectionView.elementKindSectionHeader:
+                supplimentary = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+                
+                let label = UILabel(frame: .zero)
+                label.text = "Recently Added"
+                label.translatesAutoresizingMaskIntoConstraints = false
+                label.font = UIFont.preferredFont(forTextStyle: .title3)
+                supplimentary.addSubview(label)
+                label.bottomAnchor.constraint(equalTo: supplimentary.bottomAnchor).isActive = true
+                label.leadingAnchor.constraint(equalTo: supplimentary.leadingAnchor, constant: 20).isActive = true
+            default:
+                break;
+        }
+        
+        return supplimentary
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { fatalError() }
         let width = view.bounds.width
@@ -110,8 +130,8 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath)
-        cell.backgroundColor = UIColor.red
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? LibraryCustomCollectionCell else { return UICollectionViewCell() }
+        cell.title.text = musicList[indexPath.row].description
         return cell
     }
     
