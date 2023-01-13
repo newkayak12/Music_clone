@@ -22,9 +22,9 @@ class SearchMainViewController: UIViewController {
         
         
         if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            
             layout.minimumInteritemSpacing = 10
         }
+        
     }
 
     
@@ -59,7 +59,7 @@ extension SearchMainViewController: UICollectionViewDelegate, UICollectionViewDa
         let bound = view.bounds
         let width = bound.width - ( layout.sectionInset.left + layout.sectionInset.right)
 //        let height = bound.height - (layout.sectionInset.top + layout.sectionInset.bottom)
-        let collectionWidth = (width - (layout.minimumLineSpacing) * 3) / 2
+        let collectionWidth = (width - (layout.minimumInteritemSpacing) * 3) / 2
         let collectionHeight = collectionWidth * 0.6
         layout.estimatedItemSize = .zero
         

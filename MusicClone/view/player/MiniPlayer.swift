@@ -7,32 +7,16 @@
 
 import UIKit
 
-class MiniPlayer: UIView, UIGestureRecognizerDelegate {
-    @IBOutlet weak var coverImage: UIImageView!
+class MiniPlayer: UIView{
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var playPause: UIButton!
-    @IBAction func fnPlayPause(_ sender: Any) {
-    }
-    @IBAction func fnForward(_ sender: Any) {
-    }
+    @IBOutlet weak var btn: UIButton!
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("TOUCH")
-    }
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-//        customInit()
+    @IBAction func t(_ sender: Any) {
     }
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-//        customInit()
+        print(#function)
     }
-//    func customInit(){
-//        if let view = Bundle.main.loadNibNamed("MiniPlayer", owner: nil, options: nil)?.first as? UIView {
-//            view.frame = self.bounds
-//            addSubview(view)
-//
-//            print(view.subviews)
-//        }
-//    }
+    
+
 }
