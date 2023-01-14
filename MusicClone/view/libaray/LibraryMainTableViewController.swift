@@ -132,6 +132,11 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? LibraryCustomCollectionCell else { return UICollectionViewCell() }
         cell.title.text = musicList[indexPath.row].description
+//        if indexPath.row % 2 == 0 {
+//
+//        } else {
+//
+//        }
         return cell
     }
     
