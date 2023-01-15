@@ -18,6 +18,7 @@
 		7E7F90B8297180A400EED76E /* 애국가.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F90B6297180A400EED76E /* 애국가.mp3 */; };
 		7E7F90BA2971838D00EED76E /* LibraryCustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90B92971838D00EED76E /* LibraryCustomCollectionCell.swift */; };
 		7E7F90BC2972872100EED76E /* RadioMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90BB2972872100EED76E /* RadioMainViewController.swift */; };
+		7E7F90C02973F96400EED76E /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90BF2973F96400EED76E /* TopCollectionViewCell.swift */; };
 		7ED4BF1E2968521100E635C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF1D2968521100E635C2 /* AppDelegate.swift */; };
 		7ED4BF202968521100E635C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF1F2968521100E635C2 /* SceneDelegate.swift */; };
 		7ED4BF222968521100E635C2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF212968521100E635C2 /* MainTabBarController.swift */; };
@@ -42,6 +43,7 @@
 		7E7F90B6297180A400EED76E /* 애국가.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "애국가.mp3"; sourceTree = "<group>"; };
 		7E7F90B92971838D00EED76E /* LibraryCustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCustomCollectionCell.swift; sourceTree = "<group>"; };
 		7E7F90BB2972872100EED76E /* RadioMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioMainViewController.swift; sourceTree = "<group>"; };
+		7E7F90BF2973F96400EED76E /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		7ED4BF1A2968521100E635C2 /* MusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED4BF1D2968521100E635C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ED4BF1F2968521100E635C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 			children = (
 				7ED4BF462969224300E635C2 /* RadioMain.storyboard */,
 				7E7F90BB2972872100EED76E /* RadioMainViewController.swift */,
+				7E7F90BF2973F96400EED76E /* TopCollectionViewCell.swift */,
 			);
 			path = radio;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7F90C02973F96400EED76E /* TopCollectionViewCell.swift in Sources */,
 				7ED4BF4B296934B100E635C2 /* LibraryMainTableViewController.swift in Sources */,
 				7E7F90BA2971838D00EED76E /* LibraryCustomCollectionCell.swift in Sources */,
 				7E7F90672969369C00EED76E /* SortType.swift in Sources */,

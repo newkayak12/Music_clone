@@ -12,12 +12,17 @@ class RadioMainViewController: UIViewController {
     @IBOutlet weak var topContent: UICollectionView!
     
     @IBOutlet weak var bottomContent: UICollectionView!
-    let topConentsArrayCount = 3
+    var topConentsArray: [Dictionary<String, String>] = []
     let bottomContentsArrayCount = 1
     override func viewDidLoad() {
         super.viewDidLoad()
+        topConentsArray.append(["header":"EXCLUSIVE", "title":"Apple Music 1", "desc": "The new music that matters.", "image":"apple_music_1"])
+        topConentsArray.append(["header":"BRAND-NEW STATION", "title":"Apple Music Hits", "desc": "Songs you know and love.", "image":"country"])
+        topConentsArray.append(["header":"BRAND-NEW STATION", "title":"Apple Music Country", "desc": "Where it sounds like home.", "image":"hits"])
+        
+        topContent.alwaysBounceHorizontal = true
+        bottomContent.alwaysBounceHorizontal = true
     }
-    
 
     /*
     // MARK: - Navigation
@@ -36,7 +41,7 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         var count = 0;
         switch collectionView {
             case topContent:
-                count = topConentsArrayCount
+                count = topConentsArray.count
             case bottomContent:
                 count = bottomContentsArrayCount
             default:
@@ -49,7 +54,16 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         var cell = UICollectionViewCell()
         switch collectionView {
             case topContent:
-                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath)
+                if let top = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as? TopCollectionViewCell {
+                    let content = topConentsArray[indexPath.row]
+                    top.header.text = content["header"]
+                    top.title.text = content["title"]
+                    top.desc.text = content["desc"]
+                    top.image.image = UIImage(named: content["image"]!)
+                    
+                    cell = top
+                } else { cell = UICollectionViewCell(); }
+                
             case bottomContent:
                 cell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath)
             default:
@@ -67,11 +81,12 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         
         switch collectionView {
             case topContent:
-                let realWidth =  (width - (layout.minimumLineSpacing * CGFloat(topConentsArrayCount)))
-                size = CGSize(width: realWidth.rounded(.down), height: (realWidth * 0.6).rounded(.down))
+                let realWidth =  (width - (layout.minimumLineSpacing * CGFloat(topConentsArray.count)))
+                size = CGSize(width: realWidth.rounded(.down), height: (realWidth * 1.5).rounded(.down))
             case bottomContent:
-                let realWidth =  (width - (layout.minimumLineSpacing * CGFloat(bottomContentsArrayCount)))
-                size = CGSize(width: realWidth.rounded(.down), height: (realWidth / 2).rounded(.down))
+                let realWidth =  (width - (layout.minimumLineSpacing))
+                let height = (view.bounds.height - topContent.bounds.height) - (bottomContent.contentInset.bottom + bottomContent.contentInset.top)
+                size = CGSize(width: realWidth.rounded(.down), height: CGFloat(height))
             default:
                 break;
         }
@@ -80,7 +95,16 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+        var edge = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        switch collectionView {
+            case topContent:
+               edge = UIEdgeInsets(top: 5, left: 20, bottom: 5, right: 20)
+            case bottomContent:
+              edge = UIEdgeInsets(top: 5, left: 20, bottom: 10, right: 20)
+            default:
+                break;
+        }
+        return edge
     }
     
 
