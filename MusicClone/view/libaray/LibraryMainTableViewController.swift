@@ -71,6 +71,8 @@ extension LibraryMainTableViewController: UITableViewDelegate, UITableViewDataSo
                 cell.clipsToBounds = false
                 let height = ((Int(((view.bounds.width - 30) / 2).rounded(.down)) * musicList.count ) / 2 )
                 cell.contentView.heightAnchor.constraint(equalToConstant: CGFloat(height + 60).rounded(.up)).isActive = true
+                
+                print("HEIGHT", CGFloat(height + 60).rounded(.up))
             default:
                 break
         }
@@ -122,7 +124,9 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
         return CGSize(width: size.rounded(.down), height: size.rounded(.down))
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        UIEdgeInsets(top: 20, left: 10, bottom: 30, right: 10)
+        
+        print("COLLECTIONVIEW", collectionView.bounds.height)
+        return UIEdgeInsets(top: 20, left: 10, bottom: 30, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
