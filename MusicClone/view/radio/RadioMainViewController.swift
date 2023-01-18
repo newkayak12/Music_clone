@@ -66,7 +66,6 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
                 let content = topConentsArray[indexPath.row]
                 
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "topCell", for: indexPath) as? TopCollectionViewCell else { fatalError() }
-//                cell.backgroundColor = .red
                 
                 let cellWidth = (view.bounds.width - (sectionInset.left + sectionInset.right) )
                 let imageWidth = cellWidth * 0.9
@@ -88,19 +87,11 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
                 cell.addSubview(imageView)
                 imageView.leadingAnchor.constraint(equalTo:cell.leadingAnchor).isActive = true
                 imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 0.0).isActive = true
-                
-                
-//                let view  = UIView(frame: .zero)
-//                view.backgroundColor = .blue
-//                view.translatesAutoresizingMaskIntoConstraints = false
-//                view.frame(forAlignmentRect: CGRect(x: 0, y: 0, width: 20, height: 20))
-//                cell.addSubview(view)
-//                view.leadingAnchor.constraint(equalTo: cell.leadingAnchor).isActive = true
-//                view.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 20).isActive = true
-                
                 return cell;
             case bottomContent:
-               return  collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath)
+                guard let bottomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath) as? BottomCollectionViewCell else {fatalError()}
+                
+               return bottomCell
             default:
                 return UICollectionViewCell()
         }
@@ -171,4 +162,25 @@ extension RadioMainViewController: UIScrollViewDelegate {
         
         
     }
+}
+
+extension RadioMainViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        print(#function,  cell)
+        cell.backgroundColor = .blue
+        return cell
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(tableView.bounds.height / 2)
+    }
+    
+    
 }
