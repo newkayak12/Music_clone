@@ -9,26 +9,31 @@ import UIKit
 
 class RadioMainViewController: UIViewController {
 
+    @IBOutlet weak var table: UITableView!
     var topConentsArray: [Dictionary<String, String>] = []
-    let bottomContentsArrayCount = 1
+    var bottomContentsArray: [Dictionary<String,String>] = []
     let sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
     @IBOutlet weak var topContent: UICollectionView!
     
-    @IBOutlet weak var bottomContent: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
         topConentsArray.append(["header":"EXCLUSIVE", "title":"Apple Music 1", "desc": "The new music that matters.", "image":"apple_music_1"])
         topConentsArray.append(["header":"BRAND-NEW STATION", "title":"Apple Music Hits", "desc": "Songs you know and love.", "image":"country"])
         topConentsArray.append(["header":"BRAND-NEW STATION", "title":"Apple Music Country", "desc": "Where it sounds like home.", "image":"hits"])
         
+        bottomContentsArray.append(["title": "BBC World Service", "desc":"International in-depth news and features.", "ImageView": "bbc"])
+        bottomContentsArray.append(["title": "BloombergRadio", "desc":"The latest business, financil and global news 24/7", "ImageView": "bloomberg"])
+//        desc
+//        title
+//        ImageView
+        
         
 //
         topContent.alwaysBounceHorizontal = true
         topContent.showsHorizontalScrollIndicator = false
         topContent.decelerationRate = .fast
-//
-//
-//        bottomContent.alwaysBounceHorizontal = true
+        table.alwaysBounceHorizontal = true
+        table.separatorInset = UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 20)
     }
 }
 
@@ -37,8 +42,8 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         switch collectionView {
             case topContent:
                 return topConentsArray.count
-            case bottomContent:
-                return bottomContentsArrayCount
+//            case bottomContent:
+//                return bottomContentsArrayCount
             default:
                 return 0
         }
@@ -53,8 +58,8 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         switch collectionView {
             case topContent:
                 height = topContent.bounds.height - (sectionInset.top + sectionInset.bottom)
-            case bottomContent:
-                height = bottomContent.bounds.height - (sectionInset.top + sectionInset.bottom)
+//            case bottomContent:
+//                height = bottomContent.bounds.height - (sectionInset.top + sectionInset.bottom)
             default:
                 height = 0.0
         }
@@ -88,10 +93,10 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
                 imageView.leadingAnchor.constraint(equalTo:cell.leadingAnchor).isActive = true
                 imageView.bottomAnchor.constraint(equalTo: cell.bottomAnchor, constant: 0.0).isActive = true
                 return cell;
-            case bottomContent:
-                guard let bottomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath) as? BottomCollectionViewCell else {fatalError()}
-                
-               return bottomCell
+//            case bottomContent:
+//                guard let bottomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bottomCell", for: indexPath) as? BottomCollectionViewCell else {fatalError()}
+//
+//               return bottomCell
             default:
                 return UICollectionViewCell()
         }
@@ -101,8 +106,8 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
         switch collectionView {
             case topContent:
                 return CGFloat(10)
-            case bottomContent:
-                return CGFloat(sectionInset.left)
+//            case bottomContent:
+//                return CGFloat(sectionInset.left)
             default:
                 return CGFloat(sectionInset.left)
         }
@@ -114,6 +119,7 @@ extension RadioMainViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
             return sectionInset
     }
+    
     
 }
 
@@ -172,15 +178,44 @@ extension RadioMainViewController: UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? BottomTableViewCell else { return UITableViewCell() }
         
+        let data = bottomContentsArray[indexPath.row]
+        
+        cell.title.text = data["title"]
+        cell.desc.text = data["desc"]
+        cell.desc.numberOfLines = 2
+        cell.ImageView.image = UIImage(named: data["ImageView"]!)
+        cell.ImageView.layer.cornerRadius = 5
+        cell.ImageView.clipsToBounds = true
+        
+        let image = UIImage(systemName: "ellipsis")
+        image?.withTintColor(.black, renderingMode: .alwaysOriginal)
+        
+        let accessory = UIImageView(image: image)
+        cell.accessoryView = accessory
         print(#function,  cell)
-        cell.backgroundColor = .blue
         return cell
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(tableView.bounds.height / 2)
+        return CGFloat((tableView.bounds.height / 2) * 0.8)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let view = UIView(frame: .zero)
+//        let label = UILabel(frame: .zero)
+//        label.text = "Station"
+//        label.font = UIFont.preferredFont(forTextStyle: .title2)
+//        label.translatesAutoresizingMaskIntoConstraints = false
+//        view.addSubview(label)
+//
+//        label.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+//        label.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10.0).isActive = true
+//        return view
+//    }
     
 }
