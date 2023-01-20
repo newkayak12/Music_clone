@@ -22,7 +22,7 @@ class RadioMainViewController: UIViewController {
         topConentsArray.append(["header":"BRAND-NEW STATION", "title":"Apple Music Country", "desc": "Where it sounds like home.", "image":"hits"])
         
         bottomContentsArray.append(["title": "BBC World Service", "desc":"International in-depth news and features.", "ImageView": "bbc"])
-        bottomContentsArray.append(["title": "BloombergRadio", "desc":"The latest business, financil and global news 24/7", "ImageView": "bloomberg"])
+        bottomContentsArray.append(["title": "Bloomberg Radio", "desc":"The latest business, financial and global news 24/7", "ImageView": "bloomberg"])
 //        desc
 //        title
 //        ImageView
@@ -33,6 +33,7 @@ class RadioMainViewController: UIViewController {
         topContent.showsHorizontalScrollIndicator = false
         topContent.decelerationRate = .fast
         table.alwaysBounceHorizontal = true
+        table.alwaysBounceVertical = false
         table.separatorInset = UIEdgeInsets(top: 0, left: 140, bottom: 0, right: 20)
     }
 }

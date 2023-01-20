@@ -7,11 +7,13 @@
 
 import UIKit
 import AVKit
+
 class LibraryMainTableViewController: UIViewController {
     var isEdit: Bool = false
     var sortTypeList: [SortType] = []
     var albumList: [Album] = []
-    var musicList: [AVPlayerItem] = []
+//    var musicList: [AVPlayerItem] = []
+    var musicList: [[String:Any]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let preset = UserDefaults.standard.value(forKey: "librarySection") as? Data else {return}
@@ -29,9 +31,12 @@ class LibraryMainTableViewController: UIViewController {
 //        let url = Bundle.main.resourceURL
 //        print("\n\n")
             for url in urls {
+                var fileName = url.lastPathComponent
+                
+                fileName = String(fileName[fileName.startIndex..<(fileName.lastIndex(of: ".") ?? fileName.endIndex)])
                let file =  AVPlayerItem(url: url)
 //                print(String(describing: file))
-                musicList.append(file)
+                musicList.append(["title": fileName, "avPlayerItem": file])
                 
                 print(file.automaticallyLoadedAssetKeys)
                 
@@ -113,6 +118,10 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
         
         return supplimentary
     }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 10
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         guard let layout = collectionViewLayout as? UICollectionViewFlowLayout else { fatalError() }
@@ -121,7 +130,7 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
         
         let size = (width - (inset * 3)) / 2
         layout.estimatedItemSize = .zero
-        return CGSize(width: size.rounded(.down), height: size.rounded(.down))
+        return CGSize(width: size.rounded(.down), height: size.rounded(.up))
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         
@@ -135,12 +144,31 @@ extension LibraryMainTableViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? LibraryCustomCollectionCell else { return UICollectionViewCell() }
-        cell.title.text = musicList[indexPath.row].description
-//        if indexPath.row % 2 == 0 {
-//
-//        } else {
-//
-//        }
+        
+        if let file = musicList[indexPath.row]["avPlayerItem"] as? AVPlayerItem {
+                
+            let metaDatas = file.asset.metadata
+            
+            
+
+            for item in metaDatas {
+                if let itemValue = item.value{
+                    if let commonKey = item.commonKey as? AVMetadataKey {
+                        if let key = item.commonKey?.rawValue as? String {
+                            if let itemImage = item.value as? NSData  {
+                                if let itemImageData = itemImage as? Data {
+                                    cell.albumCover.image = UIImage(data: itemImageData)
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        guard let title = musicList[indexPath.row]["title"] as? String else { fatalError() }
+        
+        cell.title.text = title
         return cell
     }
     

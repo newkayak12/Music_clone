@@ -14,12 +14,12 @@
 		7E7F9077296A567300EED76E /* MiniPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F9075296A567300EED76E /* MiniPlayer.swift */; };
 		7E7F9078296A567300EED76E /* MiniPlayer.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F9076296A567300EED76E /* MiniPlayer.xib */; };
 		7E7F9080296D93A200EED76E /* SearchCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F907F296D93A200EED76E /* SearchCustomCell.swift */; };
-		7E7F90B7297180A400EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F90B5297180A400EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */; };
 		7E7F90B8297180A400EED76E /* 애국가.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F90B6297180A400EED76E /* 애국가.mp3 */; };
 		7E7F90BA2971838D00EED76E /* LibraryCustomCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90B92971838D00EED76E /* LibraryCustomCollectionCell.swift */; };
 		7E7F90BC2972872100EED76E /* RadioMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90BB2972872100EED76E /* RadioMainViewController.swift */; };
 		7E7F90C02973F96400EED76E /* TopCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90BF2973F96400EED76E /* TopCollectionViewCell.swift */; };
 		7E7F90C62978AB5000EED76E /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90C52978AB5000EED76E /* BottomTableViewCell.swift */; };
+		7E7F90C8297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E7F90C7297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */; };
 		7ED4BF1E2968521100E635C2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF1D2968521100E635C2 /* AppDelegate.swift */; };
 		7ED4BF202968521100E635C2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF1F2968521100E635C2 /* SceneDelegate.swift */; };
 		7ED4BF222968521100E635C2 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED4BF212968521100E635C2 /* MainTabBarController.swift */; };
@@ -40,12 +40,13 @@
 		7E7F9075296A567300EED76E /* MiniPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPlayer.swift; sourceTree = "<group>"; };
 		7E7F9076296A567300EED76E /* MiniPlayer.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MiniPlayer.xib; sourceTree = "<group>"; };
 		7E7F907F296D93A200EED76E /* SearchCustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomCell.swift; sourceTree = "<group>"; };
-		7E7F90B5297180A400EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3"; sourceTree = "<group>"; };
 		7E7F90B6297180A400EED76E /* 애국가.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "애국가.mp3"; sourceTree = "<group>"; };
 		7E7F90B92971838D00EED76E /* LibraryCustomCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCustomCollectionCell.swift; sourceTree = "<group>"; };
 		7E7F90BB2972872100EED76E /* RadioMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioMainViewController.swift; sourceTree = "<group>"; };
 		7E7F90BF2973F96400EED76E /* TopCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCollectionViewCell.swift; sourceTree = "<group>"; };
 		7E7F90C52978AB5000EED76E /* BottomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
+		7E7F90C7297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3"; sourceTree = "<group>"; };
+		7E7F90C9297AA45200EED76E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7ED4BF1A2968521100E635C2 /* MusicClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7ED4BF1D2968521100E635C2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7ED4BF1F2968521100E635C2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				7E7F90B6297180A400EED76E /* 애국가.mp3 */,
-				7E7F90B5297180A400EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */,
+				7E7F90C7297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -106,6 +107,7 @@
 		7ED4BF112968521100E635C2 = {
 			isa = PBXGroup;
 			children = (
+				7E7F90C9297AA45200EED76E /* README.md */,
 				7ED4BF1C2968521100E635C2 /* MusicClone */,
 				7ED4BF1B2968521100E635C2 /* Products */,
 			);
@@ -251,9 +253,9 @@
 				7ED4BF272968521200E635C2 /* Assets.xcassets in Resources */,
 				7E7F9078296A567300EED76E /* MiniPlayer.xib in Resources */,
 				7E7F90B8297180A400EED76E /* 애국가.mp3 in Resources */,
-				7E7F90B7297180A400EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 in Resources */,
 				7ED4BF472969224300E635C2 /* RadioMain.storyboard in Resources */,
 				7ED4BF3429691D6B00E635C2 /* launchScreen.storyboard in Resources */,
+				7E7F90C8297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 in Resources */,
 				7ED4BF492969225800E635C2 /* SearchMain.storyboard in Resources */,
 				7ED4BF252968521100E635C2 /* MainTabBar.storyboard in Resources */,
 				7ED4BF452969222E00E635C2 /* LibraryMain.storyboard in Resources */,
