@@ -1,6 +1,6 @@
 #  Apple Music Clone
 
-! [screensh]./markdownImage/libaray.png)
-! [screensh]./markdownImage/radio.png)
-! [screensh]./markdownImage/search.png)
+! [Library](./markdownImage/libaray.png)
+! [Radio](./markdownImage/radio.png)
+! [Search](./markdownImage/search.png)
 
