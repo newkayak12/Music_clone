@@ -31,6 +31,7 @@ class MainTabBarController: UITabBarController {
         miniPlayer.forward.addTarget(self, action: #selector(forward), for: .touchUpInside)
         
         
+        miniPlayer.delegate = self
         
 //        if let customView = Bundle.main.loadNibNamed(String(describing: MiniPlayer.self), owner:self, options: nil)?.first as? MiniPlayer {
 ////            customView.title.text = ""
@@ -61,6 +62,22 @@ class MainTabBarController: UITabBarController {
         print(#function)
     }
     
+    
   
 }
 
+extension MainTabBarController: MiniPlayerDelegate {
+    func touchBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let playerStoryBoard: UIStoryboard = UIStoryboard(name: "Player", bundle: nil)
+        let playerViewController = playerStoryBoard.instantiateViewController(withIdentifier: "PlayController") as! PlayController
+        playerViewController.modalPresentationStyle = .fullScreen
+        present(playerViewController, animated: true)
+        
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("PREPARE")
+    }
+}

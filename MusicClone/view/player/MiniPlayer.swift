@@ -7,11 +7,17 @@
 
 import UIKit
 
+protocol MiniPlayerDelegate {
+    func touchBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+}
+
 class MiniPlayer: UIView {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var playPause: UIButton!
     @IBOutlet weak var forward: UIButton!
+    
+    var delegate: MiniPlayerDelegate?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -30,11 +36,13 @@ class MiniPlayer: UIView {
             addSubview(view)
         }
         
+        
+        
     }
 }
 
 extension MiniPlayer: UIGestureRecognizerDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print(#function)
+        delegate?.touchBegan(touches, with: event)
     }
 }

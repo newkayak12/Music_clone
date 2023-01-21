@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9px-d7-s3w">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MainTabBar-->
+        <scene sceneID="qzr-0i-OwQ">
+            <objects>
+                <tabBarController storyboardIdentifier="MainTabBar" title="MainTabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9px-d7-s3w" customClass="MainTabBarController" customModule="MusicClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="arm-10-Hso">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="WPp-M6-QtI" kind="relationship" relationship="viewControllers" id="S9q-ti-dmx"/>
+                        <segue destination="h3o-AJ-7d2" kind="relationship" relationship="viewControllers" id="8Lt-ZN-ckH"/>
+                        <segue destination="UIF-6K-Gmb" kind="relationship" relationship="viewControllers" id="HaD-ax-kZz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCl-jH-5nN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2201" y="69"/>
+        </scene>
+        <!--LibraryMain-->
+        <scene sceneID="ZnF-ee-4Fe">
+            <objects>
+                <viewControllerPlaceholder storyboardName="LibraryMain" id="WPp-M6-QtI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Library" id="jyk-CY-HqS"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4VT-Fe-gKb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1448" y="-7"/>
+        </scene>
+        <!--RadioMain-->
+        <scene sceneID="xUl-fg-Fjt">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RadioMain" id="h3o-AJ-7d2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Radio" image="dot.radiowaves.left.and.right" catalog="system" id="guV-26-rzB"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tAh-n7-HnD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1456" y="62"/>
+        </scene>
+        <!--SearchMain-->
+        <scene sceneID="QEI-Pr-G75">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SearchMain" id="UIF-6K-Gmb" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="0xt-f7-xyz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fD-yN-aco" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1456" y="144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uau-76-zxu">
+            <objects>
+                <viewController id="nxh-QH-VaK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DkH-Er-UdU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2iG-tx-LoU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Kg-sG-h3a" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1302" y="693"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dot.radiowaves.left.and.right" catalog="system" width="128" height="91"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
