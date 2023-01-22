@@ -151,7 +151,7 @@
                                                 <imageReference key="image" image="speaker.fill" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progressViewStyle="bar" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="l0Y-DC-JAP">
-                                                <rect key="frame" x="31" y="19.666666666666629" width="288.33333333333337" height="2.6666666666666679"/>
+                                                <rect key="frame" x="31" y="19.666666666666629" width="288.33333333333331" height="2.6666666666666679"/>
                                                 <color key="progressTintColor" systemColor="systemGray6Color"/>
                                                 <color key="trackTintColor" systemColor="systemGray2Color"/>
                                             </progressView>
@@ -238,6 +238,9 @@
                                     <constraint firstItem="l7m-GD-5LT" firstAttribute="top" secondItem="7Md-Xh-erf" secondAttribute="top" constant="67" id="k1Q-G2-C1l"/>
                                     <constraint firstItem="mBz-o5-L9R" firstAttribute="leading" secondItem="7Md-Xh-erf" secondAttribute="leading" constant="16" id="uvm-aV-CPB"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="oP2-fz-61S" appends="YES" id="gey-q8-QB9"/>
+                                </connections>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -261,6 +264,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="down" id="oP2-fz-61S">
+                    <connections>
+                        <action selector="swipeDown:" destination="Y6W-OH-hqX" id="ie3-gq-BgX"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-83.206106870229007" y="-28.169014084507044"/>
         </scene>

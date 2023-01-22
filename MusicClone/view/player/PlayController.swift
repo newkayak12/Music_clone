@@ -34,29 +34,13 @@ class PlayController: UIViewController {
     }
     
     
-    @objc func swipe(_: UISwipeGestureRecognizer){
+    @IBAction func swipeDown(_ sender: UISwipeGestureRecognizer) {
         print(#function)
+        dismiss(animated: true)
     }
     
-    let audioSession = AVAudioSession.sharedInstance()
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    func listenVolumeButton() {
-        do {
-            try audioSession.setActive(true)
-        } catch {
-            print("some error")
-        }
-        audioSession.addObserver(self, forKeyPath: "outputVolume", options: NSKeyValueObservingOptions.new, context: nil)
-    }
-    
-    
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "outputVolume" {
-            print("Hello")
-        }
     }
 }
 

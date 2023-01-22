@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E39B870297D691700FF9039 /* PlaySingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39B86F297D691700FF9039 /* PlaySingletone.swift */; };
 		7E76175E297AC4CC00A6F6E9 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E76175D297AC4CC00A6F6E9 /* PlayController.swift */; };
 		7E7F90672969369C00EED76E /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90662969369C00EED76E /* SortType.swift */; };
 		7E7F9069296936FE00EED76E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F9068296936FE00EED76E /* Album.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E39B86F297D691700FF9039 /* PlaySingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySingletone.swift; sourceTree = "<group>"; };
 		7E76175D297AC4CC00A6F6E9 /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		7E7F90662969369C00EED76E /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		7E7F9068296936FE00EED76E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				7E7F90B6297180A400EED76E /* 애국가.mp3 */,
 				7E7F90C7297A887500EED76E /* 흔들리는 꽃들 속에서 네 샴푸향이 느껴진거야.mp3 */,
+				7E39B86F297D691700FF9039 /* PlaySingletone.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				7E7F90BA2971838D00EED76E /* LibraryCustomCollectionCell.swift in Sources */,
 				7E76175E297AC4CC00A6F6E9 /* PlayController.swift in Sources */,
 				7E7F90672969369C00EED76E /* SortType.swift in Sources */,
+				7E39B870297D691700FF9039 /* PlaySingletone.swift in Sources */,
 				7E7F90BC2972872100EED76E /* RadioMainViewController.swift in Sources */,
 				7E7F9080296D93A200EED76E /* SearchCustomCell.swift in Sources */,
 				7ED4BF222968521100E635C2 /* MainTabBarController.swift in Sources */,
