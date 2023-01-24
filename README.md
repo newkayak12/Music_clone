@@ -14,3 +14,9 @@
         <p style="text-align: center">Search</p>
     </div>
 </div>
+
+
+ TODO
+- [ ] volume 관련 Observer 붙이기
+- [ ] 음악 파일 불러다 재생하기
+- [ ] 음악 재생되면 album art 사이즈 변경

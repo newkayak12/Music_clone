@@ -32,8 +32,10 @@
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAlbumArt" translatesAutoresizingMaskIntoConstraints="NO" id="P1m-Tk-quY">
                                         <rect key="frame" x="46.333333333333343" y="127" width="300.33333333333326" height="300"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="Ofm-M6-sa2"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="wnN-tY-ldk"/>
+                                            <constraint firstAttribute="width" priority="250" constant="360" id="BA0-Dm-zqz"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="750" constant="300" identifier="300Height" id="Ofm-M6-sa2"/>
+                                            <constraint firstAttribute="height" priority="250" constant="360" id="fAo-aT-B0Y"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="750" constant="300" identifier="300Width" id="wnN-tY-ldk"/>
                                         </constraints>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B72-tz-wtN" userLabel="infoPannel">
@@ -208,8 +210,10 @@
                                             <constraint firstAttribute="bottom" secondItem="fGD-T6-HsM" secondAttribute="bottom" id="2FB-Mp-tIJ"/>
                                             <constraint firstAttribute="bottom" secondItem="fSz-RG-el9" secondAttribute="bottom" id="4XE-iz-FIT"/>
                                             <constraint firstItem="dtv-BR-ic0" firstAttribute="top" secondItem="94h-QP-2ZU" secondAttribute="top" id="DaM-0k-oQl"/>
+                                            <constraint firstAttribute="trailing" secondItem="fGD-T6-HsM" secondAttribute="trailing" id="JMI-od-qoP"/>
                                             <constraint firstItem="fSz-RG-el9" firstAttribute="centerX" secondItem="94h-QP-2ZU" secondAttribute="centerX" id="KaW-go-TCM"/>
                                             <constraint firstItem="fSz-RG-el9" firstAttribute="top" secondItem="94h-QP-2ZU" secondAttribute="top" id="PTM-ES-2ZM"/>
+                                            <constraint firstItem="dtv-BR-ic0" firstAttribute="leading" secondItem="94h-QP-2ZU" secondAttribute="leading" id="cdZ-rm-M0W"/>
                                             <constraint firstAttribute="bottom" secondItem="dtv-BR-ic0" secondAttribute="bottom" id="iF5-qC-vPt"/>
                                             <constraint firstItem="fGD-T6-HsM" firstAttribute="top" secondItem="94h-QP-2ZU" secondAttribute="top" id="vJC-Yr-Qe8"/>
                                         </constraints>
@@ -239,7 +243,7 @@
                                     <constraint firstItem="mBz-o5-L9R" firstAttribute="leading" secondItem="7Md-Xh-erf" secondAttribute="leading" constant="16" id="uvm-aV-CPB"/>
                                 </constraints>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="oP2-fz-61S" appends="YES" id="gey-q8-QB9"/>
+                                    <outletCollection property="gestureRecognizers" destination="qNd-5f-CgC" appends="YES" id="JOi-RI-U7m"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -255,6 +259,7 @@
                     </view>
                     <connections>
                         <outlet property="albumArt" destination="P1m-Tk-quY" id="tvN-Px-QAK"/>
+                        <outlet property="closeBar" destination="l7m-GD-5LT" id="h3I-ak-mXC"/>
                         <outlet property="lastLabel" destination="ixc-Jy-emi" id="knc-HI-H6T"/>
                         <outlet property="playPauseButton" destination="X7h-6e-L28" id="qhy-Av-hHM"/>
                         <outlet property="playProgressBar" destination="zYc-HJ-Qzn" id="0IW-AO-1QJ"/>
@@ -264,9 +269,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="down" id="oP2-fz-61S">
+                <swipeGestureRecognizer direction="down" id="qNd-5f-CgC">
                     <connections>
-                        <action selector="swipeDown:" destination="Y6W-OH-hqX" id="ie3-gq-BgX"/>
+                        <action selector="swipeDown:" destination="Y6W-OH-hqX" id="5us-1K-5IU"/>
                     </connections>
                 </swipeGestureRecognizer>
             </objects>

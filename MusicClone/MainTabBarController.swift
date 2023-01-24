@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import MediaPlayer
 
-class MainTabBarController: UITabBarController {
+class MainTabBarController: UITabBarController, UIViewControllerTransitioningDelegate {
     var miniPlayer: MiniPlayer!
     var isPlay = false
     
@@ -15,6 +16,8 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         customInit()
+        
+        
     }
 
     func customInit(){
@@ -26,13 +29,9 @@ class MainTabBarController: UITabBarController {
         miniPlayer.leadingAnchor.constraint(equalTo: tabBar.leadingAnchor).isActive = true
         miniPlayer.trailingAnchor.constraint(equalTo: tabBar.trailingAnchor).isActive = true
         miniPlayer.heightAnchor.constraint(equalToConstant: 70).isActive = true
-        
         miniPlayer.playPause.addTarget(self, action: #selector(playAndPause), for: .touchUpInside)
         miniPlayer.forward.addTarget(self, action: #selector(forward), for: .touchUpInside)
-        
-        
         miniPlayer.delegate = self
-        PlayerSingletone.main
        
     }
     
@@ -43,6 +42,7 @@ class MainTabBarController: UITabBarController {
             
         } else {
             image = UIImage(systemName: "pause.fill",  withConfiguration: UIImage.SymbolConfiguration(font: .preferredFont(forTextStyle: .title3), scale: .large))
+            
         }
         miniPlayer.playPause.setImage(image, for: .normal)
         isPlay = !isPlay
@@ -60,7 +60,7 @@ extension MainTabBarController: MiniPlayerDelegate {
     func touchBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let playerStoryBoard: UIStoryboard = UIStoryboard(name: "Player", bundle: nil)
         let playerViewController = playerStoryBoard.instantiateViewController(withIdentifier: "PlayController") as! PlayController
-        playerViewController.modalPresentationStyle = .fullScreen
+        playerViewController.modalPresentationStyle = .custom
         present(playerViewController, animated: true)
         
         
@@ -69,5 +69,10 @@ extension MainTabBarController: MiniPlayerDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         print("PREPARE")
+        segue.destination.modalPresentationStyle = .custom
+        segue.destination.transitioningDelegate = self
     }
+}
+
+extension MiniPlayer: UIViewControllerTransitioningDelegate {
 }
