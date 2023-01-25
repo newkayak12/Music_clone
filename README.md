@@ -19,7 +19,7 @@
  TODO
 - [ ] volume 관련 Observer 붙이기
 - [ ] 음악 파일 불러다 재생하기
-- [ ] 음악 재생되면 album art 사이즈 변경
+- [x] 음악 재생되면 album art 사이즈 변경 : layout active/inactive
 
 *** 아쉬운 점
 1. 음악 실행, 트랜지션 등 구현하지 못 함
