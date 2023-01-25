@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E39B870297D691700FF9039 /* PlaySingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39B86F297D691700FF9039 /* PlaySingletone.swift */; };
+		7E39B8722981397600FF9039 /* PlayerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E39B8712981397600FF9039 /* PlayerPresentationController.swift */; };
 		7E76175E297AC4CC00A6F6E9 /* PlayController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E76175D297AC4CC00A6F6E9 /* PlayController.swift */; };
 		7E7F90672969369C00EED76E /* SortType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F90662969369C00EED76E /* SortType.swift */; };
 		7E7F9069296936FE00EED76E /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7F9068296936FE00EED76E /* Album.swift */; };
@@ -37,6 +38,7 @@
 
 /* Begin PBXFileReference section */
 		7E39B86F297D691700FF9039 /* PlaySingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySingletone.swift; sourceTree = "<group>"; };
+		7E39B8712981397600FF9039 /* PlayerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPresentationController.swift; sourceTree = "<group>"; };
 		7E76175D297AC4CC00A6F6E9 /* PlayController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayController.swift; sourceTree = "<group>"; };
 		7E7F90662969369C00EED76E /* SortType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortType.swift; sourceTree = "<group>"; };
 		7E7F9068296936FE00EED76E /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				7E7F9076296A567300EED76E /* MiniPlayer.xib */,
 				7E7F90CC297ABCB500EED76E /* Player.storyboard */,
 				7E76175D297AC4CC00A6F6E9 /* PlayController.swift */,
+				7E39B8712981397600FF9039 /* PlayerPresentationController.swift */,
 			);
 			path = player;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				7E7F90C62978AB5000EED76E /* BottomTableViewCell.swift in Sources */,
 				7E7F90BA2971838D00EED76E /* LibraryCustomCollectionCell.swift in Sources */,
 				7E76175E297AC4CC00A6F6E9 /* PlayController.swift in Sources */,
+				7E39B8722981397600FF9039 /* PlayerPresentationController.swift in Sources */,
 				7E7F90672969369C00EED76E /* SortType.swift in Sources */,
 				7E39B870297D691700FF9039 /* PlaySingletone.swift in Sources */,
 				7E7F90BC2972872100EED76E /* RadioMainViewController.swift in Sources */,

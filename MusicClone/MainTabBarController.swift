@@ -8,7 +8,7 @@
 import UIKit
 import MediaPlayer
 
-class MainTabBarController: UITabBarController, UIViewControllerTransitioningDelegate {
+class MainTabBarController: UITabBarController{
     var miniPlayer: MiniPlayer!
     var isPlay = false
     
@@ -52,27 +52,29 @@ class MainTabBarController: UITabBarController, UIViewControllerTransitioningDel
         print(#function)
     }
     
-    
+   
   
 }
 
+
+extension MainTabBarController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        print(#function)
+        return PlayerPresentationController(presentedViewController: presented, presenting: presenting)
+    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        segue.destination.modalPresentationStyle = .custom
+//        segue.destination.transitioningDelegate = self
+//    }
+}
 extension MainTabBarController: MiniPlayerDelegate {
     func touchBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let playerStoryBoard: UIStoryboard = UIStoryboard(name: "Player", bundle: nil)
         let playerViewController = playerStoryBoard.instantiateViewController(withIdentifier: "PlayController") as! PlayController
+        playerViewController.transitioningDelegate = self
         playerViewController.modalPresentationStyle = .custom
+        
+        
         present(playerViewController, animated: true)
-        
-        
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("PREPARE")
-        segue.destination.modalPresentationStyle = .custom
-        segue.destination.transitioningDelegate = self
-    }
-}
-
-extension MiniPlayer: UIViewControllerTransitioningDelegate {
 }
